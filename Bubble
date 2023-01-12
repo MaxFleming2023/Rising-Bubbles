@@ -1,0 +1,30 @@
+class Bubble { 
+  int bSize;
+  int x;
+  int y;
+
+  Bubble() {
+  
+    bSize = (int) (Math.random() * 80) + 20;
+    x = (int) (Math.random() * width);
+    y = (int) (Math.random()*height);
+    
+  }
+
+  void rise_wiggle() { 
+    float rFactor = 0.03;
+    //float r = (int)(Math.random()*10+rFactor);
+    //int w = (int) (Math.random() * 9) - 4; 
+    float r = bSize * rFactor +(float)(Math.random());
+    int w = (int)(Math.random()*5)-2;
+    x += w;
+    y -= r;
+    
+  }
+
+  void show() { 
+    fill((int)(Math.random()*255),(int)(Math.random()*255), (int)(Math.random()*255));
+    ellipse(x, y, bSize, bSize);
+    //THAT'S IT!
+  }
+}
